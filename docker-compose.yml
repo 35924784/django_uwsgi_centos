@@ -1,0 +1,17 @@
+version: "3"
+services:
+  django_uwsgi:
+    build: .
+    container_name: django_uwsgi
+    hostname: django_uwsgi # docker容器主机名
+    tty: true
+    ports:
+      - "10022:22"
+      - "8005:80"
+    volumes:
+      - ./software/:/mnt/software/:rw
+      - ./project/:/project/
+      - ./nginx/conf/:/usr/local/nginx/conf/
+      - ./nginx/html/:/usr/local/nginx/html/
+      - ./docker/:/docker
+    command: bash ./docker/run.sh  # 设置启动命令
