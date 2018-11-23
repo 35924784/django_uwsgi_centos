@@ -1,2 +1,2 @@
 # 生成的新镜像 centos+django+uwsgi
-FROM django_uwsgi:v1
+FROM lizhiqiang666/django_uwsgi:v1
